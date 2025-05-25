@@ -7,12 +7,7 @@ export async function POST(request: Request) {
     // API Key'i request header'dan al
     const apiKey = request.headers.get('x-api-key');
     
-    if (!apiKey) {
-      return NextResponse.json(
-        { error: "API Key gerekli" },
-        { status: 400 }
-      );
-    }
+
 
     // Supabase istemcisini oluştur
     const supabase = await createClient();
